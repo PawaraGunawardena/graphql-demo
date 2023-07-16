@@ -5,7 +5,7 @@ public class Book  {
 
     public double Price {get; set;}
 
-    public DateTime PublishedDate {get; set;}
+    public DateTime? PublishedDate {get; set;}
 
     public Author? Author {get; set;}
 }
