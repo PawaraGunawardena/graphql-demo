@@ -1,0 +1,16 @@
+{
+  things {
+    __typename
+    ... on Book {
+      name
+      publishedDate
+      reviews {
+        rating
+      }
+    }
+    ... on Magazine {
+      name
+      genre
+    }
+  }
+}

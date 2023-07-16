@@ -1,0 +1,43 @@
+# $bookName: String to pass a variable to the query
+query GetMyBooks ($bookName: String, $withAuthor: Boolean!, $noGenre: Boolean!){
+  
+  # nameContains argument sending to the server side
+  # $bookName variable use to filter results at server side
+  # aliase booksWithVariableValue to rename response section
+  booksWithVariableValue: books (nameContains: $bookName){
+
+    # using pre defined fields from a fragment
+    ...bookFields
+    pages
+    price
+    publishedDate
+
+    # Use Variable and include/skip Directives 
+    # to dynamically change the response structure 
+    # using a single GraphQL query
+    author @include (if: $withAuthor) {
+      name
+    }
+    reviews {
+        reviewId
+        rating
+        user
+        description
+    }
+  }
+
+  # aliase booksWithH to rename response section
+  booksWithH : books (nameContains: "H") {
+
+    # using pre defined fields from a fragment
+    ...bookFields
+  }
+}
+
+# Use pre defined set of field names in the queries using fragments
+fragment bookFields on Book {
+  bookId
+  name
+  # directives with fragments
+  genre @skip (if: $noGenre)
+}

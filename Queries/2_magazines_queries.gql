@@ -1,0 +1,6 @@
+{
+  magazines {
+    name
+    genre
+  }
+}

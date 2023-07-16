@@ -1,0 +1,18 @@
+{
+  readingMaterials {
+    # use metafields to get additional data
+    # here request typename since it gives results of a common interface
+    # typename tells what is the specific object type that was returned in the results
+    __typename
+    name
+    genre
+
+    # use inline fragments to fetch type initialized object type fields
+    ... on Book {
+      pages
+    }
+    ...on Magazine {
+      issueNo
+    }
+  }
+}
