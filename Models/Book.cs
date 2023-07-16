@@ -5,7 +5,17 @@ public class Book  {
 
     public double Price {get; set;}
 
+    public BookGenre Genre {get; set;}
+
     public DateTime? PublishedDate {get; set;}
 
     public Author? Author {get; set;}
+}
+
+public enum BookGenre {
+    Horror,
+    Fantasy,
+    Drama,
+    Thriller,
+    NonFiction
 }
