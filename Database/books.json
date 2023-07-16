@@ -7,7 +7,15 @@
         "author": {
             "authorId": 109,
             "name": "J. K. Rowling"
-        }
+        },
+        "reviews": [
+            {
+                "reviewId": 62,
+                "rating": 5,
+                "description": "Fantasy movie series",
+                "user": "Sample User"
+            }
+        ]
     },
     {
         "bookId": 54,

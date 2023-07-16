@@ -10,6 +10,8 @@ public class Book  {
     public DateTime? PublishedDate {get; set;}
 
     public Author? Author {get; set;}
+
+    public BookReview[]? Reviews {get; set;}
 }
 
 public enum BookGenre {
